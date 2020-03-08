@@ -1,18 +1,18 @@
 import stocks from '../../data/stocks';
 
 const state = {
-   stocks: [
-
-   ],
+   stocks: []
 };
 
 const mutations = {
    'SET_STOCKS'(state, stocks) {
       state.stocks = stocks
    },
-   /* 'RND_STOCKS'(state) {
-
-   }, */
+   'RND_STOCKS'(state) {
+      state.stocks.forEach(stock => {
+         stock.price = Math.round(stock.price * (1 + Math.random() - 0.4)) //cijena ide u rangu 60% dole ili gore
+      })
+   },
 };
 
 const actions = {
@@ -31,7 +31,7 @@ const getters = {
    stocks: state => { return state.stocks; }
 }
 
-export default{
+export default {
    state,
    mutations,
    actions,
