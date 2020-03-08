@@ -14,6 +14,7 @@
             <a>Stocks</a>
           </router-link>
         </ul>
+        <strong class="navbar-text navbar-right">Funds: {{funds}}</strong>
         <ul class="nav navbar-nav navbar-right">
           <li>
             <a href="#">End Day</a>
@@ -31,8 +32,8 @@
               <span class="caret"></span>
             </a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Save Data</a>
-                <a class="dropdown-item" href="#">Load Data</a>
+              <a class="dropdown-item" href="#">Save Data</a>
+              <a class="dropdown-item" href="#">Load Data</a>
             </div>
           </li>
         </ul>
@@ -43,7 +44,11 @@
 
 <script>
 export default {
-   
+   computed: {
+      funds(){
+         return this.$store.getters.funds
+      }
+   }
 };
 </script>
 
