@@ -52,7 +52,7 @@ export default {
       const order = {
         stockId: this.stock.id,
         stockPrice: this.stock.price,
-        quantity: this.quantity
+        quantity: Number(this.quantity)   //jer data iz nekog razloga pravi String umjesto Number
       };
       this.placeSellOrder(order); //umjesto this.$store.dispatch
       this.quantity = 0;
