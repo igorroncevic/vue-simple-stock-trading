@@ -4,17 +4,18 @@
     <h5>You may Save & Load your Data</h5>
     <h5>Click on 'End Day' to begin a New Day!</h5>
     <hr />
-    <p>Your Funds: {{funds}}</p>
+    <p>Your Funds: Funds: {{funds | currency}}</p>
+    <!-- piping funds to currency filter -->
   </div>
 </template>
 
 <script>
 export default {
-   computed: {
-      funds(){
-         return this.$store.getters.funds
-      }
-   }
+  computed: {
+    funds() {
+      return this.$store.getters.funds;
+    }
+  }
 };
 </script>
 
